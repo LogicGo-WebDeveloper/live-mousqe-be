@@ -8,9 +8,9 @@
   "description": "",
   "module": "",
   "scripts": {
-    "dev": "ts-node-dev dist/index.js",
+    "dev": "ts-node-dev src/dist/index.js",
     "build": "tsc",
-    "start": "dist/index.js"
+    "start": "src/dist/index.js"
   },
   "dependencies": {
     "@types/bcrypt": "^6.0.0",
