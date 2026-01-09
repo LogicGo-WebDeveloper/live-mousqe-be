@@ -21,6 +21,7 @@ app.use(
       "https://livemosque-beta.vercel.app",
       "https://app.livemosque.live",
       "https://livemosque.live",
+      ...(typeof process !== "undefined" && process.env.CORS_ORIGIN ? [process.env.CORS_ORIGIN] : []),
     ],
     credentials: true,
   })
