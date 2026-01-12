@@ -21,11 +21,23 @@ app.use(
       "https://livemosque-beta.vercel.app",
       "https://app.livemosque.live",
       "https://livemosque.live",
-      ...(typeof process !== "undefined" && process.env.CORS_ORIGIN ? [process.env.CORS_ORIGIN] : []),
+      "https://live-mosuqe-website.vercel.app",
+      ...(process.env.CORS_ORIGIN ? [process.env.CORS_ORIGIN] : []),
     ],
     credentials: true,
   })
 );
+
+// Log all the allowed CORS origins at startup
+console.log("Allowed CORS origins:", [
+  "http://localhost:3000",
+  "https://livemosque-beta.vercel.app",
+  "https://app.livemosque.live",
+  "https://livemosque.live",
+  "https://live-mosuqe-website.vercel.app",
+  ...(process.env.CORS_ORIGIN ? [process.env.CORS_ORIGIN] : []),
+]);
+
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
